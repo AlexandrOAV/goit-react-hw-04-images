@@ -1,6 +1,7 @@
 import { ImageGalleryItem } from 'components/ImageGallery/ImageGalleryItem/ImageGalleryItem'
 import css from './ImageGallery.module.css'
 import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types';
 
 export const ImageGallery = ( {hits, alt, onClick}) => {
     const selectItem = id => {
@@ -24,3 +25,8 @@ export const ImageGallery = ( {hits, alt, onClick}) => {
 </ul>
     )
 }
+ImageGallery.propTypes = {
+    hits: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+  alt: PropTypes.string.isRequired,
+};

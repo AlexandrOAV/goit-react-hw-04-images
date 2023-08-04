@@ -2,6 +2,7 @@ import { Formik, Form, Field } from 'formik';
 import css from './Searchbar.module.css'
 import { BsSearch } from 'react-icons/bs'
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
 
 export const Searchbar = ({ onSubmit }) => {
@@ -40,3 +41,6 @@ export const Searchbar = ({ onSubmit }) => {
       </header>
     )
   }
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
