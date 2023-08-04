@@ -31,6 +31,12 @@ export const App = () => {
     try {
       setIsLoading(true);
       const newData = await getImage(textSearch, page);
+      console.log('newData: ', newData);
+      if (newData.hits.length === 0) {
+        toast.error('Images not faund')
+        setHits([])
+        return;
+      }
       setHits(prevHits => page === 1 ? newData.hits : [...prevHits, ...newData.hits]);
       setTotalHits(newData.totalHits);
     } catch (error) {
@@ -79,6 +85,4 @@ export const App = () => {
         />}
     </div>
   )
-}
-
-
+};
